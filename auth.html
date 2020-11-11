@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>вход · матем</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./css/auth.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav>
+        <div class="box">
+            <a href="/"><img class="logo" src="./img/logo.jpg"></img></a>
+        </div>
+    </nav>
+    <main>
+        <div class="login">
+            <h2>вход</h2>
+
+            <form id="login-form">
+            <div class="container">
+                <label for="username"><b>логин</b></label>
+                <input type="text" placeholder="Введите логин" name="email" required>
+
+                <label for="password"><b>пароль</b></label>
+                <input type="password" placeholder="Введите Пароль" name="password" required>
+                    
+                <button type="submit">Войти</button>
+            </div>
+            </form>
+        </div><div class="register">
+            <h2>регистрация</h2>
+
+            <form id="register-form">
+            <div class="container">
+                <label for="email"><b>почта</b></label>
+                <input type="text" placeholder="Укажите Почту" name="email" required>
+                <label for="username"><b>логин</b></label>
+                <input type="text" placeholder="Придумайте Логин" name="username" required>
+
+                <label for="password"><b>пароль</b></label>
+                <input type="password" placeholder="Придумайте Пароль" name="password" required>
+                    
+                <button type="submit">Зарегестрироваться</button>
+            </div>
+            </form>
+        </div><center style="margin-top:2rem;">
+            <div class="register" onclick="change(0)">Есть аккаунт?</div>
+            <div class="login" onclick="change(1)">Нет аккаунта?</div>
+        </center>
+    </main>
+    <script>
+        function change(n){
+            let a = (n)?[".login", ".register"]:[".register",".login"]
+
+            let notshow = [...document.querySelectorAll(a[0])]
+            let show = [...document.querySelectorAll(a[1])]
+            
+            notshow = notshow.forEach(el => {el.style.display = "none"})
+            show = show.forEach(el => {el.style.display = "block"})
+        }
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDaCcN_m4v0voxufY1icEeXg4UB7JxYLC4",
+            authDomain: "math-f15ff.firebaseapp.com",
+            databaseURL: "https://math-f15ff.firebaseio.com",
+            projectId: "math-f15ff",
+            storageBucket: "math-f15ff.appspot.com",
+            messagingSenderId: "441322745830",
+            appId: "1:441322745830:web:d61ab0215cce860c72f027",
+            measurementId: "G-Z8E3MG7K7G"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // to prevent errors with time stamps
+        db.settings({timestampsInSnapshots: true})
+    </script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+</html>

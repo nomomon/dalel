@@ -1,0 +1,45 @@
+:root{
+    --shift-1:15vw;
+    
+}
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image: url(/img/cool-background.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav{
+    top:0;
+    width: 100vw;
+    position:fixed;
+    height:4rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: white;
+}
+nav .box{
+    margin-left:var(--shift-1);
+    margin-right:var(--shift-1);
+}
+nav .logo{
+    height:3.5rem;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+nav .sign{
+    float:right;
+    
+}
+main{
+    margin:5rem var(--shift-1) 5rem var(--shift-1);
+    height:75vh; 
+    width:70vw;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.login, .logout{
+    display: none;
+}

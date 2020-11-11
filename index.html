@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>форум · матем</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav>
+        <div class="box">
+            <a href="/"><img class="logo" src="./img/logo.jpg"></img></a>
+            <div class="sign">
+                <ul style="list-style:none;">
+                    <li class="login"><a href="./auth.html">Войти</a></li>
+                    <li class="logout"><a>Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    </main>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDaCcN_m4v0voxufY1icEeXg4UB7JxYLC4",
+            authDomain: "math-f15ff.firebaseapp.com",
+            databaseURL: "https://math-f15ff.firebaseio.com",
+            projectId: "math-f15ff",
+            storageBucket: "math-f15ff.appspot.com",
+            messagingSenderId: "441322745830",
+            appId: "1:441322745830:web:d61ab0215cce860c72f027",
+            measurementId: "G-Z8E3MG7K7G"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // to prevent errors with time stamps
+        db.settings({timestampsInSnapshots: true})
+    </script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/db.js"></script>
+</body>
+</html>
