@@ -1,3 +1,8 @@
+let user = auth.currentUser;
+if(user){
+    console.log("lol")
+    window.location.href = window.location.origin;
+}
 // register
 const registerForm = document.querySelector("#register-form")
 
@@ -6,12 +11,17 @@ registerForm.addEventListener('submit', e=>{
     
     // get user info
     const email = registerForm['email'].value;
-    const username  = registerForm['username'].value;
+    const displayname  = registerForm['displayname'].value;
     const password = registerForm['password'].value;
 
     // register user
     auth.createUserWithEmailAndPassword(email, password).then(cred =>{
         // console.log(cred.user)
+        let user = auth.currentUser;
+        user.updateProfile({
+            displayName: displayname
+        })
+        user.sendEmailVerification()
         window.location.href = window.location.origin;
     })
 })
