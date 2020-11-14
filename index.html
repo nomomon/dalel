@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>форум · матча</title>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -20,7 +20,28 @@
     </nav>
 
     <main>
+        <div class="topBar" onclick="show()">
+            click here
+        </div>
     </main>
+
+    <div class="black-wraper">
+        <div class="newPost">
+            <div onclick="show()" style="float:right;">close</div>
+            <form id="new-post">
+            <div class="container">
+                <label for="title"><b>Название</b></label>
+                <input type="text" placeholder="Придумайте название" name="title" required autocomplete="off">
+                <label for="source"><b>Источник</b></label>
+                <input type="text" placeholder="Если есть, укажите источник" name="source" required autocomplete="off">
+                <label for="text"><b>Содержание</b></label>
+                <textarea type="text" name="text" required></textarea>
+
+                <button type="submit">Выложить</button>
+            </div>
+            </form>
+        </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>

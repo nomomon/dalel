@@ -1,8 +1,12 @@
-let user = auth.currentUser;
-if(user){
-    console.log("lol")
-    window.location.href = window.location.origin;
-}
+setInterval(()=>{
+    let user = auth.currentUser;
+    console.log("page loaded", user, auth.currentUser)
+    if(user){
+        console.log("user logged in")
+        window.location.href = window.location.origin;
+    }
+}, 1000)
+
 // register
 const registerForm = document.querySelector("#register-form")
 
